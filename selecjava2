@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Sel2 {
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.print("Ingrese los kilometros recorridos: ");
+        double km = entrada.nextDouble();
+
+        System.out.print("¿El viaje es de noche? (S/N): ");
+        String noche = entrada.next().toUpperCase();
+
+        double tarifa = 2 + (1.50 * km);
+
+        if (km > 10) {
+            tarifa = tarifa * 1.20;
+        }
+
+        if (noche.equals("S")) {
+            tarifa = tarifa * 1.30;
+        }
+
+        System.out.println("El total a pagar es: $" + tarifa);
+
+        entrada.close();
+    }
+}
